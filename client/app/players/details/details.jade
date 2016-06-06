@@ -1,0 +1,57 @@
+h4.hcenter.well.container Player Details 
+ul.hcenter.well.container(style="list-style: none" ng-show="!vm.isEditing")
+  img(ng-src="{{vm.player.image}}", style="height:100px; width: 100px;")
+  li Name: {{vm.player.firstName}} {{vm.player.lastName}}
+  li Age: {{vm.player.age}}
+  li Sport: {{vm.player.sport}}
+  li Position: {{vm.player.position}}
+  li Height: {{vm.player.height}}cm
+  li Weight: {{vm.player.weight}}lbs
+  li Number: {{vm.player.number}}
+  li Team: {{vm.player.teamName}}
+  li College: {{vm.player.college}}
+  li Nationality: {{vm.player.nationality}}
+form.well.container(ng-show="vm.isEditing" ng-submit="vm.update()")
+  label first name: 
+  input.form-control(ng-model="vm.updatePlayer.firstName")
+  br
+  label last name:
+  input.form-control(ng-model="vm.updatePlayer.lastName")
+  br
+  label age:
+  input.form-control(ng-model="vm.updatePlayer.age")
+  br
+  label sport:
+  input.form-control(ng-model="vm.updatePlayer.sport")
+  br
+  label position:
+  input.form-control(ng-model="vm.updatePlayer.position")
+  br
+  label height:
+  input.form-control(ng-model="vm.updatePlayer.height")
+  br
+  label weight:
+  input.form-control(ng-model="vm.updatePlayer.weight")
+  br
+  label number:
+  input.form-control(ng-model="vm.updatePlayer.number")
+  br
+  label image:
+  input.form-control(ng-model="vm.updatePlayer.image")
+  br
+  label team name:
+  input.form-control(ng-model="vm.updatePlayer.teamName")
+  br
+  label college:
+  input.form-control(ng-model="vm.updatePlayer.college")
+  br
+  label nationality:
+  input.form-control(ng-model="vm.updatePlayer.nationality")
+  br
+  button.btn.btn-danger(type="button" ng-click="vm.isEditing = false;" style="margin-right: 5px") Go Back
+  button.btn.btn-success Submit
+  
+div.hcenter.well.container(ng-show="!vm.isEditing")
+  button.btn.btn-danger(ng-click="vm.remove()" style="margin-right:5px;") Delete
+  button.btn.btn-info(ng-click="vm.startEditing()") Edit
+  
